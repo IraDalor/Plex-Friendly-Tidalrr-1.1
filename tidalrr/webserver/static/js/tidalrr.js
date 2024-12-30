@@ -1,5 +1,6 @@
 $(document).ready( function () {
   $('#table').DataTable({
+    pageLength: 1000, // Set pagination size to 1000
     initComplete: function () {
       this.api().columns().every( function () {
         var column = this;
