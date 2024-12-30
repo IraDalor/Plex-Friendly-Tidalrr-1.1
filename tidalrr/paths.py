@@ -71,7 +71,7 @@ def getAlbumPath(album:Album):
     settings = getSettings()
     artist = getTidalArtist(album.artist)
     if artist is not None:
-        artists = album.artists.split(", ")[:5]
+        artists = album.artists.split(", ")[:1]
         artists = ", ".join(artists)[:50]
         artistName = fixPath(str(artists))
         albumArtistName = fixPath(artist.name) if album.artist is not None else ""
@@ -123,10 +123,12 @@ def getTrackPath(track, stream, artist=None, album=None, playlist=None, filename
     settings = getSettings()
     base = './'
     number = str(track.trackNumber).rjust(2, '0')
+    if album.numberOfVolumes > 1:
+        # Prepend the disc number to the track number
+        # For disc 2 track 01, this becomes '201'
+        number = str(track.volumeNumber) + str(track.trackNumber).rjust(2, '0')
     if album is not None:
         base = getAlbumPath(album)
-        if album.numberOfVolumes > 1:
-            base += f'/CD{str(track.volumeNumber)}'
 
     if playlist is not None and settings.usePlaylistFolder:
         base = getPlaylistPath(playlist)
