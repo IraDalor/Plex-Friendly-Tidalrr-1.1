@@ -116,7 +116,7 @@ def downloadTrack(settings=Settings, track=Track, artist= Artist, album= Album):
         return True
 
     # download
-    sleep_time = random.randint(500, 5000) / 1000
+    sleep_time = random.randint(250, 2500) / 1000
     time.sleep(sleep_time)
     
     check, err = download_and_combine(track.path, stream.urls)
