@@ -4,7 +4,8 @@
 @File    :   app.py
 @Time    :   2023/10/25
 @Author  :   Jacob Roy
-@Version :   1.0
+@Contributor: Ethan Paffe
+@Version :   1.1
 @Contact :   lejacobroy@gmail.com
 @Desc    :   
 '''
