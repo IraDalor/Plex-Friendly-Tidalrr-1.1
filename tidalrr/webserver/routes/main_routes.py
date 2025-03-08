@@ -13,7 +13,7 @@ main_bp = Blueprint('main', __name__)
 class UserSettingsForm(FlaskForm):
     albumFolderFormat = StringField('albumFolderFormat', validators=[DataRequired()])
     apiKeyIndex = SelectField('apiKeyIndex', choices=[('1', 1), ('2', 2), ('3', 3), ('4', 4)])
-    audioQuality = SelectField('audioQuality', choices=[('Normal', 'Normal'), ('High', 'High'), ('Master', 'Master'), ('Max', 'Max')])
+    audioQuality = SelectField('audioQuality', choices=[('Normal', 'Normal'), ('High', 'High'), ('HiFi', 'HiFi'), ('Master', 'Master'), ('Max', 'Max')])
     downloadPath = StringField('downloadPath', validators=[DataRequired()])
     includeEP = BooleanField('includeEP')
     lyricFile = BooleanField('lyricFile')
